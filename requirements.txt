@@ -4,3 +4,6 @@ python-dotenv
 pdf2image
 langchain_community
 langchain
+PyPDF2
+langchain
+langchain_google_genai
