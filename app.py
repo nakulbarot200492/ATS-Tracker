@@ -25,7 +25,10 @@ def input_pdf_setup(uploaded_file):
     if uploaded_file is not None:
         try:
             # Convert the entire PDF to images (all pages)
-            images=pdf2image.convert_from_bytes(uploaded_file.read())
+            # Explicitly provide the poppler_path
+            poppler_path = r"C:\Program Files (x86)\poppler\Library\bin"
+            images = pdf2image.convert_from_bytes(uploaded_file.read(), poppler_path=poppler_path)
+            
             
             # List to hold encoded images
             pdf_parts = []
